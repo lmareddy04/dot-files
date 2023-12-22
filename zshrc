@@ -137,10 +137,14 @@ setopt INC_APPEND_HISTORY        # Write to the history file immediately, not wh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias h="history"
 alias c="clear"
 alias szsh="source ~/.zshrc"
 alias rp="realpath"
 
+alias grep="grep --color=always"
+
+alias exa="exa --color=always"
 alias exat="exa --tree --level=10"
 alias exam="exa -lh --accessed --modified --created"
 

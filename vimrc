@@ -73,6 +73,12 @@ set ignorecase
 " Matches case if CAPS in the search
 set smartcase
 
+" Auto apply syntzx based on filetypes
+au BufRead,BufNewFile *.vh,*.vs set filetype=systemverilog
+
+" Add matchit pacakge
+packadd! matchit
+
 " Mappings to toggle line numbers
 map <leader>l :set nu!<CR>
 map <leader>r :set rnu!<CR>
@@ -96,6 +102,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'https://github.com/adelarsq/vim-matchit'
+Plug 'godlygeek/tabular'
 
 call plug#end()
 
