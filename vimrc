@@ -30,6 +30,9 @@ set incsearch
 "Enables mouse copy
 set mouse=a
 
+"For mouse to work inside tmux
+set ttymouse=xterm2
+
 "Toggle paste mode
 set pastetoggle=<F2>
 
