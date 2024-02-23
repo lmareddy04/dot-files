@@ -12,6 +12,9 @@ cd fonts
 cd ..
 rm -rf fonts
 
+#################################
+# OMZ Section
+#################################
 #Install Oh my Zsh!  https://github.com/ohmyzsh/ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -20,9 +23,23 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.o
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+or
+
+#################################
+# ZSH for Humans Section
+#################################
+if command -v curl >/dev/null 2>&1; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
+else
+  sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
+fi
+
 # fzf - fuzzy file finder
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 # bat - better version of cat
 # exa - better version of ls
 # the_silver_searcher - fast search like grep 
-sudo yum install fzf bat exa the_silver_searcher
+sudo yum install bat exa the_silver_searcher
 
