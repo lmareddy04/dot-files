@@ -148,4 +148,6 @@ alias exa="exa --color=always"
 alias exat="exa --tree --level=10"
 alias exam="exa -lh --accessed --modified --created"
 
+eval "$(zoxide init zsh)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
