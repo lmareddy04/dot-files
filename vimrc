@@ -45,9 +45,9 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -55,11 +55,6 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Color scheme (terminal)
-colorscheme molokai
-
-" Enable colors within tmux
-set term=xterm-256color
 
 " Highlight Matching brackets
 set showmatch
@@ -105,18 +100,36 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'https://github.com/adelarsq/vim-matchit'
+Plug 'adelarsq/vim-matchit'
 Plug 'godlygeek/tabular'
-
+Plug 'tinted-theming/base16-vim'
 call plug#end()
 
 " Nerdtree section
 nnoremap <C-n> :NERDTreeToggle<CR>
 
+" Enable colors within tmux
+set term=xterm-256color
+set termguicolors
+
+" Color scheme (terminal)
+" colorscheme molokai
+let base16colorspace=256
+colorscheme base16-ayu-mirage
+"colorscheme base16-ayu-dark
+"colorscheme base16-horizon-dark
+
 " Airline Section
 let g:airline_powerline_fonts = 1
-let g:airline_theme= 'dark'
+"let g:airline_theme= 'dark'
+"let g:airline_theme = 'base16_harmonic_dark'
+let g:airline_theme = 'ayu_mirage'
+let g:airline#extensions#default#layout = [['a','b','c'], ['x','y','z']]
+
 
 " Map ctrl+p to invoke fzf Files
 " nnoremap <C-P> :FZF -m<CR>
 nnoremap <C-P> :GFiles <CR>
+nnoremap <C-F> :Files <CR>
+nnoremap <C-B> :Buffers <CR>
+

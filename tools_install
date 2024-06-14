@@ -12,6 +12,7 @@ cd fonts
 cd ..
 rm -rf fonts
 
+https://github.com/ryanoasis/nerd-fonts/releases
 #################################
 # OMZ Section
 #################################
