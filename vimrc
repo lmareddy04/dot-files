@@ -75,7 +75,7 @@ set smartcase
 au BufRead,BufNewFile *.vh,*.vs set filetype=systemverilog
 
 " Add matchit pacakge
-packadd! matchit
+"packadd! matchit
 
 " Mappings to toggle line numbers
 map <leader>l :set nu!<CR>
@@ -91,17 +91,16 @@ call plug#begin()
 "   - Avoid using standard Vim directory names like 'plugin'
 
 " Make sure you use single quotes
-
 Plug 'preservim/nerdtree'
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'adelarsq/vim-matchit'
 Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
+Plug 'andymass/vim-matchup'
 Plug 'tinted-theming/base16-vim'
 call plug#end()
 
@@ -126,10 +125,13 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'ayu_mirage'
 let g:airline#extensions#default#layout = [['a','b','c'], ['x','y','z']]
 
-
 " Map ctrl+p to invoke fzf Files
 " nnoremap <C-P> :FZF -m<CR>
 nnoremap <C-P> :GFiles <CR>
 nnoremap <C-F> :Files <CR>
 nnoremap <C-B> :Buffers <CR>
-
+ 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
