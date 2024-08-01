@@ -93,6 +93,7 @@ call plug#begin()
 " Make sure you use single quotes
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
