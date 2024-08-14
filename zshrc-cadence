@@ -155,7 +155,7 @@ alias exat="exa --tree --level=10"
 alias exam="exa -lh --accessed --modified --created"
 
 ### PROJECT Section
-alias get_alacritty="qsub -q normal.q -b y -V -now n dbus-launch /grid/common/pkgs/alacritty/v0.10/bin/alacritty"
+alias get_alacritty="qsub -q normal.q -b y -V -now n dbus-launch /grid/common/pkgs/alacritty/v0.12/bin/alacritty"
 alias get_xterm="qsub -q normal.q -b y -V -now n xterm"
 
 export WA=/proj/aetos/lmareddy
