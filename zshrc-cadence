@@ -155,14 +155,18 @@ alias exat="exa --tree --level=10"
 alias exam="exa -lh --accessed --modified --created"
 
 ### PROJECT Section
-alias get_alacritty="qsub -q normal.q -b y -V -now n dbus-launch /grid/common/pkgs/alacritty/v0.12/bin/alacritty"
-alias get_xterm="qsub -q normal.q -b y -V -now n xterm"
+alias get_interactiveA="qsub -q normal.q -b y -V -now n dbus-launch /grid/common/pkgs/alacritty/v0.12/bin/alacritty"
+alias get_normalA="qsub -q normal.q -b y -V -now n dbus-launch /grid/common/pkgs/alacritty/v0.12/bin/alacritty"
+alias get_backendA="qsub -q normal.q -b y -V -now n dbus-launch /grid/common/pkgs/alacritty/v0.12/bin/alacritty"
 
 export WA=/proj/aetos/lmareddy
 alias cdwa="cd $WA"
-
 alias waves="verisium -db xrun_results/myDB.db"
 
+alias loggrep="grep core._mon xrun_results/xrun_run.log | grep "
+
+
+###Cadence Cloud section
 export http_proxy="http://aw07-proxy:3129"
 
 export MY_TOOLS=/proj/aetos/lmareddy/tools
@@ -177,6 +181,7 @@ export PATH=/grid/common/pkgs/tmux/v3.3a/bin:$PATH
 export PATH=/grid/common/pkgs/xclip/latest/bin:$PATH
 export PATH=/grid/common/pkgs/svlint/v0.9.2/bin:$PATH
 export PATH=/grid/common/pkgs/firefox/latest:$PATH
+export PATH=/grid/common/pkgs/alacritty/v0.12/bin:$PATH
 export PATH=$MY_TOOLS/zoxide:$PATH
 export PATH=$MY_TOOLS/zellij:$PATH
 export PATH=$MY_TOOLS/fzf/bin:$PATH
@@ -184,7 +189,6 @@ export PATH=$MY_TOOLS/svls:$PATH
 export PATH=$MY_TOOLS/exa/bin:$PATH
 
 export TERM=xterm-256color
-
 export TMUX_TMPDIR=~/tmux-sessions
 
 function module {
@@ -198,6 +202,7 @@ function module {
 }
 
 eval "$(zoxide init zsh)"
+alias cd="z"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden'
