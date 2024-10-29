@@ -19,9 +19,5 @@
     #cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
     cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 
-[user]
-	email = lmareddy@imachinesinc.com
-	name = Lakshman Mareddy
-
 [credential]
 	helper = store
