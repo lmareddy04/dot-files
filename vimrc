@@ -75,7 +75,7 @@ set smartcase
 au BufRead,BufNewFile *.vh,*.vs set filetype=systemverilog
 
 " Add matchit pacakge
-"packadd! matchit
+" packadd! matchit
 
 " Mappings to toggle line numbers
 map <leader>l :set nu!<CR>
@@ -93,6 +93,7 @@ call plug#begin()
 " Make sure you use single quotes
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-obsession'
 Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
