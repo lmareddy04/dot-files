@@ -30,8 +30,8 @@ set incsearch
 "Enables mouse copy
 set mouse=a
 
-"For mouse to work inside tmux
-set ttymouse=xterm2
+"For mouse to work inside tmux -- only for older versions of tmux
+"set ttymouse=xterm2
 
 "Toggle paste mode
 set pastetoggle=<F2>
@@ -55,7 +55,6 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-
 " Highlight Matching brackets
 set showmatch
 
@@ -72,10 +71,7 @@ set ignorecase
 set smartcase
 
 " Auto apply syntzx based on filetypes
-au BufRead,BufNewFile *.vh,*.vs set filetype=systemverilog
-
-" Add matchit pacakge
-" packadd! matchit
+au BufRead,BufNewFile *.vh,*.vs,*.f set filetype=systemverilog
 
 " Mappings to toggle line numbers
 map <leader>l :set nu!<CR>
@@ -93,7 +89,6 @@ call plug#begin()
 " Make sure you use single quotes
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
-"Plug 'tpope/vim-obsession'
 Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
@@ -103,6 +98,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
 Plug 'andymass/vim-matchup'
+Plug 'luochen1990/rainbow'
 Plug 'tinted-theming/base16-vim'
 call plug#end()
 
@@ -110,21 +106,20 @@ call plug#end()
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Enable colors within tmux
-set term=xterm-256color
 set termguicolors
+"set term=xterm-256color
 
 " Color scheme (terminal)
 " colorscheme molokai
 let base16colorspace=256
-colorscheme base16-ayu-mirage
-"colorscheme base16-ayu-dark
-"colorscheme base16-horizon-dark
+"colorscheme base16-ayu-mirage
+colorscheme base16-ayu-dark 
 
 " Airline Section
 let g:airline_powerline_fonts = 1
 "let g:airline_theme= 'dark'
-"let g:airline_theme = 'base16_harmonic_dark'
-let g:airline_theme = 'ayu_mirage'
+"let g:airline_theme = 'ayu_mirage'
+let g:airline_theme = 'ayu_dark'
 let g:airline#extensions#default#layout = [['a','b','c'], ['x','y','z']]
 
 " Map ctrl+p to invoke fzf Files
@@ -137,3 +132,10 @@ nnoremap <C-B> :Buffers <CR>
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Remapping the auto-fill file paths ctrl+x ctrl+f
+inoremap <C-f> <C-x><C-f>
+
+"Enable rainbow paranthesis
+let g:rainbow_active = 0
+nnoremap <C-r> :RainbowToggle<CR>
